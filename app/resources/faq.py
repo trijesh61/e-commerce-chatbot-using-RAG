@@ -4,11 +4,14 @@ import pandas as pd
 from pathlib import Path
 import chromadb
 from dotenv import load_dotenv
+from chromadb.utils import embedding_functions
 from groq import Groq
 import os
 load_dotenv()
 
-
+ef = embedding_functions.SentenceTransformerEmbeddingFunction(
+            model_name='sentence-transformers/all-MiniLM-L6-v2'
+        )
 
 
 
@@ -40,13 +43,15 @@ def ingest_faq_data(path):
     
 
 def get_relevant_qa(query):
-    collection = chroma_client.get_collection(name=collection_name_faq)
+    collection = chroma_client.get_collection(
+        name=collection_name_faq,
+        embedding_function=ef
+    )
     result = collection.query(
         query_texts=[query],
         n_results=2
     )
     return result
-
 
 def faq_chain(query):
     result = get_relevant_qa(query)

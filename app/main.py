@@ -1,6 +1,6 @@
 import streamlit as st
 from faq import ingest_faq_data, faq_chain
-from sql import sql_chain
+#from sql import sql_chain
 from pathlib import Path
 from router import router
 
@@ -13,7 +13,7 @@ def ask(query):
     if route == 'faq':
         return faq_chain(query)
     elif route == 'sql':
-        return sql_chain(query)
+        return "Not implemented yet" #sql_chain(query)
     else:
         return f"Route {route} not implemented yet"
 

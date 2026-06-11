@@ -27,7 +27,7 @@ def ingest_faq_data(path):
         print("ingesting faq Data into chroma db")
         collection = chroma_client.get_or_create_collection(
             name=collection_name_faq,
-            
+            embedding_function=ef
         )
         df = pd.read_csv(path)
         docs = df['question'].to_list()

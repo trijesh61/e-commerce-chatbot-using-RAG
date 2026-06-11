@@ -9,7 +9,7 @@ ingest_faq_data(faqs_path)
 
 
 def ask(query):
-    route = router(query).name 
+    route = router(query).name
     if route == 'faq':
         return faq_chain(query)
     elif route == 'sql':

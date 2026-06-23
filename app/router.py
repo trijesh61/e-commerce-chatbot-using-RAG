@@ -69,7 +69,8 @@ sql = Route(
         "Show men's shoes",
         "Show women's shoes",
         "Find casual shoes",
-        "Find formal shoes"
+        "Find formal shoes",
+        "Pink Puma shoes in price range 500 to 1000"
     ]
 )
 
@@ -78,4 +79,4 @@ router = SemanticRouter(routes=[faq, sql], encoder=encoder, auto_sync="local")
 
 if __name__ == "__main__":
     print(router("What is your policy on defective product?").name)
-    print(router("Pink Puma shoes in price range 5000 to 1000").name)
+    print(router("Pick Puma shoes in price range 500 to 1000").name)

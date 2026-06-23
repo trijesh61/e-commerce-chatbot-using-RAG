@@ -188,11 +188,3 @@ if query:
         }
     )
 
-# ---------------------------------
-# Footer
-# ---------------------------------
-st.divider()
-
-st.caption(
-    "ShopAssist AI • Product Discovery • FAQ Support • Semantic Search"
-)

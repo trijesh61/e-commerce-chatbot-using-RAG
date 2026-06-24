@@ -1,46 +1,98 @@
-# 💬 e-commerce chatbot (Gen AI RAG project using LLama3.3 and GROQ)
+# 🛍️ ShopAssist AI
 
-This is POC of an intelligent chatbot tailored for an e-commerce platform, enabling seamless user interactions by accurately identifying the intent behind user queries. It leverages real-time access to the platform's database, allowing it to provide precise and up-to-date responses.
+ShopAssist AI is an AI-powered e-commerce chatbot built using **Llama 3.3**, **GROQ**, **Semantic Routing**, **RAG**, and **SQL-based retrieval**.
 
-Folder structure
-1. app: All the code for chatbot
-2. web-scraping: Code to scrap e-commerce website 
+The chatbot intelligently identifies user intent and routes queries to the appropriate processing pipeline, enabling accurate responses for both product-related searches and store-related FAQs.
 
-This chatbot currently supports two intents:
-
-- **faq**: Triggered when users ask questions related to the platform's policies or general information. eg. Is online payment available?
-- **sql**: Activated when users request product listings or information based on real-time database queries. eg. Show me all nike shoes below Rs. 3000.
-
-
-![product screenshot](app/resources/product-ss.png)
-
-
-## Architecture
-![architecture diagram of the e-commerce chatbot](app/resources/architecture-diagram.png)
-
-
-### Set-up & Execution
-
-1. Run the following command to install all dependencies. 
-
-    ```bash
-    pip install -r app/requirements.txt
-    ```
-
-1. Inside app folder, create a .env file with your GROQ credentials as follows:
-    ```text
-    GROQ_MODEL=<Add the model name, e.g. llama-3.3-70b-versatile>
-    GROQ_API_KEY=<Add your groq api key here>
-    ```
-
-1. Run the streamlit app by running the following command.
-
-    ```bash
-    streamlit run app/main.py
-    ```
+It provides real-time product information from the e-commerce database while answering platform-related questions using a Retrieval-Augmented Generation (RAG) system.
 
 ---
 
-Copyright (C) Codebasics Inc. All rights reserved.
+## 🚀 Features
 
-Additional Terms: This software is licensed under the MIT License. However, commercial use of this software is strictly prohibited without prior written permission from the author. Attribution must be given in all copies or substantial portions of the software.
+- Intent-based query routing using Semantic Routing
+- FAQ Question Answering using RAG
+- Real-time product retrieval using SQL queries
+- Natural language shopping experience
+- Streamlit-based chat interface
+- Fast inference powered by GROQ and Llama 3.3
+
+---
+
+## 🎯 Supported Intents
+
+### FAQ
+
+Triggered when users ask questions related to platform policies or general information.
+
+**Examples**
+- What is your return policy?
+- Do you offer cash on delivery?
+- Is online payment available?
+- How can I track my order?
+
+### SQL
+
+Activated when users request product listings or product information from the database.
+
+**Examples**
+- Show Nike products
+- Find shoes under ₹3000
+- Show Adidas sneakers below ₹5000
+- Which brand has the highest-rated sneakers?
+
+---
+
+## 📸 Application Preview
+
+![Product Screenshot](app/resources/product-ss.png)
+
+---
+
+## 🏗️ Architecture
+
+![Architecture Diagram](app/resources/architecture-diagram.png)
+
+---
+
+## ⚙️ Set-up & Execution
+
+### 1. Install Dependencies
+
+```bash
+pip install -r app/requirements.txt
+```
+
+### 2. Configure Environment Variables
+
+Create a `.env` file inside the `app` directory:
+
+```env
+GROQ_MODEL=llama-3.3-70b-versatile
+GROQ_API_KEY=your_groq_api_key
+```
+
+### 3. Run the Application
+
+```bash
+streamlit run app/main.py
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- Streamlit
+- GROQ
+- Llama 3.3
+- Semantic Routing
+- RAG (Retrieval-Augmented Generation)
+- SQL Database
+- ChromaDB
+
+---
+
+## 📌 Note
+
+This project demonstrates how Semantic Routing, RAG, and SQL retrieval can be combined to build an intelligent e-commerce shopping assistant capable of handling both informational and product-search queries.
